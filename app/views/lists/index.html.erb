@@ -1,9 +1,21 @@
-<h2>Categories</h2>
+
+<div class="banner">
+  <div class="bg-image"  style="height: 300px; width: 100%; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('http://www.giantfreakinrobot.com/wp-content/uploads/2014/09/interstellar-banner-578x267.jpg');">
+    <div class="container d-flex justify-content-center align-content-center text-white">
+      <h1>My List</h1>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-dark w-100 p-3"><h4><%= link_to "New List", new_list_path %></h4></button>
+
 
 <% @lists.each do |list| %>
-<ul>
-<li><%= link_to list.name, list_path(list) %></li>
-</ul>
+  <div class="container d-inline m-4">
+    <div class="card my-4 d-inline-flex justify-content-center" style="width: 18rem; ">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to list.name, list_path(list) %></h5>
+      </div>
+    </div>
+  </div>
 <% end %>
-
-<%= link_to "New List", new_list_path %>

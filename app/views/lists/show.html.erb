@@ -1,21 +1,34 @@
-<%= @list.name %>
+<h1><%= @list.name %></h1>
 
-<ul>
-<% @list.movies.each do |movie| %>
-<% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-  <li><%= movie.title %></li>
-    <%= link_to "Delete bookmark", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
-<ul>
 
 <%= link_to 'Add bookmark', new_list_bookmark_path(@list)%>
 <%= link_to 'Back', lists_path %>
 
-<div class="card mb-3">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
+<div class="card" style="width: 16rem;">
+
+  <% @list.movies.each do |movie| %>
+    <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+  <div class="card">
+      <div class="card-image">
+      <img class="card-img-top" style="height: 350px" src=<%= movie.poster_url %>>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title"><%= movie.title %></h5>
+      </div>
+
+      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Movie description
+      </a>
+
+      <div class="collapse" id="collapseExample">
+        <%= movie.overview %>
+      </div>
+
+      <div class="card card-footer">
+        <p class="card-text"><small class="text-muted">
+        <%= link_to "Delete bookmark", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %></small></p>
+      </div>
+    </div>
+  <% end %>
 </div>

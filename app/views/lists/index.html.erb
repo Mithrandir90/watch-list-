@@ -1,0 +1,9 @@
+<h2>Categories</h2>
+
+<% @lists.each do |list| %>
+<ul>
+<li><%= link_to list.name, list_path(list) %></li>
+</ul>
+<% end %>
+
+<%= link_to "New List", new_list_path %>

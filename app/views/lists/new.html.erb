@@ -1,4 +1,20 @@
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="banner img-fluid" alt="Responsive image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/06/07/70/060770b6a9b5a9805ed8706ac225cd3d.jpg);" style="">
+  <div class="container">
+    <h1 class="text-center"> Add a name, choose a pic! </h1>
+  </div>
+</div>
+
+<div class="form">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+
+        <%= simple_form_for @list do |f| %>
+          <h3><%= f.input :name %></h3>
+          <h3><%= f.input :photo, as: :file %></h3>
+          <%= f.submit "Submit", class: "btn btn-ghost" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

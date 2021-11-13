@@ -1,21 +1,15 @@
-
-<div class="banner">
-  <div class="bg-image"  style="height: 300px; width: 100%; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('http://www.giantfreakinrobot.com/wp-content/uploads/2014/09/interstellar-banner-578x267.jpg');">
-    <div class="container d-flex justify-content-center align-content-center text-white">
-      <h1>My List</h1>
-    </div>
+<div class="banner img-fluid" alt="Responsive image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://icdn.digitaltrends.com/image/digitaltrends/movies_movies_a_avatar_movie_019441_-720x720.jpg);" style="">
+  <div class="container">
+    <h1> Create your personal list </h1>
+    <p>Start adding a new list below, and choose a movie in our database of at least 20 movies!!</p>
+    <h1><%= link_to "New List", new_list_path, class: "btn btn-ghost" %></h1>
   </div>
 </div>
 
-<button type="button" class="btn btn-dark w-100 p-3"><h4><%= link_to "New List", new_list_path %></h4></button>
-
-
-<% @lists.each do |list| %>
-  <div class="container d-inline m-4">
-    <div class="card my-4 d-inline-flex justify-content-center" style="width: 18rem; ">
-      <div class="card-body">
-        <h5 class="card-title"><%= link_to list.name, list_path(list) %></h5>
-      </div>
+<div class="cards">
+  <% @lists.each do |list| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/ddnhxmpbf/image/upload/v1636806951/development/giwlfj8zd1zop2e0xdhu3qtsx5im.jpg')">
+      <h2 class="card-title"><%= link_to list.name, list_path(list) %></h2>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

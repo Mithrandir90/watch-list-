@@ -1,6 +1,20 @@
+<div class="banner img-fluid" alt="Responsive image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpaperaccess.com/full/4529351.jpg);" style="">
+  <div class="container">
+    <h1 class="text-center"> Choose your movie and comment below </h1>
+  </div>
+</div>
 
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="form text-center text-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+
+          <%= simple_form_for [ @list, @bookmark ] do |f| %>
+          <h5><%= f.association :movie %></h3>
+          <h5 class="py-4"><%= f.input :comment %></h5>
+          <p class="py-3"><%= f.submit "Submit", class: "btn btn-ghost" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

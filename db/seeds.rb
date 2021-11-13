@@ -1,14 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-List.create( name: 'Horror')
-List.create( name: 'Thriller')
-List.create( name: 'Comedy')
-List.create( name: 'Sci-Fi')
-List.create( name: 'Animation')
-List.create( name: 'Western')
-
-
 require 'json'
 require 'open-uri'
 # instead of doing db:drop - this will clear data before creating again
